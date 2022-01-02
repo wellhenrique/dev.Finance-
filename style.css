@@ -1,0 +1,279 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f0f2f5;
+}
+
+.preto {
+  color: #000;
+}
+.branco {
+  color: #fff;
+}
+
+.amarelo {
+  color: #fc0;
+}
+
+.linha {
+  margin-bottom: 30px;
+  width: 100%;
+  height: 1px;
+  background-color: rgb(0, 46, 6, 0.5);
+  box-shadow: 0 1px 1px #2c69106e;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* links */
+a {
+  color: #3dd705;
+  display: inline-block;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #1a8a09;
+}
+
+/* Botoes */
+
+.button.new {
+  font-family: "Roboto";
+  display: flex;
+  padding-bottom: 10px;
+}
+
+/* Inicio */
+.container {
+  margin: 0px auto;
+  max-width: 1200px;
+  text-align: center;
+  border-radius: 4px;
+}
+
+@media (max-width: 900px) {
+  .container {
+    margin: 40px auto;
+    width: min(90vw, 800px);
+    text-align: center;
+    border-radius: 4px;
+  }
+}
+
+header {
+  padding: 75px 0 150px;
+  border-radius: 4px;
+  /* background-color: #38a514; */
+  box-shadow: 0px 5px 8px 1px rgb(0, 0, 0, 0.3);
+  background: linear-gradient(#38921b, #21630b);
+}
+
+/* balanco */
+
+#balance {
+  margin-top: -7rem;
+}
+
+main .balanco {
+  padding-top: 60px;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  font-size: 38px;
+  font-weight: bold;
+  letter-spacing: 0.2rem;
+  color: #e7e7e7;
+}
+
+.saldo {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.cards {
+  font-family: "Roboto", sans-serif;
+  border-radius: 4px;
+  background-color: #f1f1f1;
+  box-shadow: 0 0 4px 2px rgb(0, 0, 0, 0.3);
+  width: 300px;
+}
+
+.cards h3 {
+  color: #111;
+  font-size: 18px;
+  font-weight: 400;
+  padding: 30px 30px 10px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cards p {
+  margin-bottom: 20px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 34px;
+  padding: 10px 30px;
+  text-align: left;
+  color: #111;
+}
+
+@media (max-width: 900px) {
+  .cards {
+    width: 400px;
+  }
+}
+
+/* ENTRADAS */
+
+.cards .entrada {
+  transform: scale(0.8, 0.8);
+  color: #12a454;
+}
+.animate .entrada:hover {
+  animation-duration: 0.5s;
+  animation-name: animate-fade;
+  animation-delay: 0.1s;
+  animation-fill-mode: backwards;
+  color: #10723c;
+}
+
+@keyframes animate-fade {
+  0% {
+    opacity: 0.8;
+    /* transform: scale(0.8, 0.8); */
+  }
+  100% {
+    transform: translate3d(4px, 1px, 10px);
+    opacity: 1;
+    transform: scale(1, 1);
+  }
+}
+
+.cards .saida {
+  transform: scale(0.8, 0.8);
+  color: #e92929;
+}
+
+.animate .saida:hover {
+  animation-duration: 0.5s;
+  animation-name: animate-fade;
+  animation-delay: 0.1s;
+  animation-fill-mode: backwards;
+  color: #a81414;
+}
+
+.card-total {
+  background-color: #47aa26;
+  /* color: #fff; */
+}
+
+.card-total .total {
+  color: #fff;
+  transform: scale(0.8, 0.8);
+}
+
+.animate .total:hover {
+  animation-duration: 0.5s;
+  animation-name: animate-fade;
+  animation-delay: 0.1s;
+  animation-fill-mode: backwards;
+}
+
+.animation {
+  display: grid;
+  place-items: center;
+  /* height: 100vh; */
+}
+
+/* Transacoes */
+
+.transacoes {
+  font-family: "Poppins", sans-serif;
+  font-size: 38px;
+  font-weight: bold;
+  letter-spacing: 0.2rem;
+  padding: 60px 0 30px 0;
+}
+
+#data-table {
+  width: 100%;
+  font-family: "Poppins", sans-serif;
+  text-align: left;
+  border-spacing: 0, 0.5rem;
+}
+#data-table .img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+table tbody tr {
+  opacity: 0.7;
+}
+table tbody tr:hover {
+  opacity: 1;
+}
+
+table th {
+  background-color: #fff;
+  padding: 16px 32px;
+  color: #969cb3;
+}
+
+table td {
+  padding: 16px 32px;
+  background-color: #fff;
+}
+
+table thead tr th:first-child,
+table tbody tr td:first-child {
+  border-radius: 4px 0 0 4px;
+}
+
+table thead tr th:last-child,
+table tbody tr td:last-child {
+  border-radius: 0 4px 4px 0;
+}
+
+td .description {
+  color: #000;
+}
+
+td.income {
+  color: #12a454;
+}
+
+td.expense {
+  color: #e92929;
+}
+
+td.img img {
+  cursor: pointer;
+}
+
+/* footer */
+
+footer {
+  padding: 64px 0 32px;
+  opacity: 0.6;
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+}
