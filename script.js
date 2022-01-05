@@ -154,23 +154,43 @@ const Form = {
   },
 
   validateFields() {
-    let { description, amount, date } = Form.getValues();
-    date.replace('-', '/');
+    const { description, amount, date } = Form.getValues();
 
-      
+    if ((description === "") | (amount === "") | (date === "")) {
+      throw new Error("Por favor, preencha todos os campos!");
+    }
+  },
+
+  fecharAlert(event) {
+    let node = document.querySelector(".alert-modal");
+    if (node.parentNode) {
+      node.parentNode.removeChild(node);
+    }
+    // document.querySelector(".alert-modal");
+    // remove(document.querySelector(".alert-modal"));
+    console.log(node);
   },
 
   submit(event) {
     event.preventDefault();
-    Form.validateFields();
+
+    try {
+      Form.validateFields();
+    } catch (er) {
+      const erro = document.createElement("div");
+      erro.classList.add("alert-modal");
+      let formatError = String(er).split("Error:").join("");
+      erro.innerHTML = `
+      <div class="alert-container">
+        <div>
+          <button id="fechar" onclick="Form.fecharAlert(event)">X</button>  
+          <p>${formatError}</p>
+        </div>
+      </div>
+      `;
+      document.body.appendChild(erro);
+    }
   },
 };
 
 App.init();
-
-// transaction.add({
-//   description: "Teste",
-//   amount: 200,
-//   date: "23/01/2022",
-// });
-// transaction.remove(4)
